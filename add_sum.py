@@ -18,7 +18,6 @@ def add(numbers: str) -> int:
         numbers = parts[1]
 
     list_of_nums = re.split(delimiter, numbers)
-    
     result = 0
     for num in list_of_nums:
         num = int(num)
@@ -26,9 +25,10 @@ def add(numbers: str) -> int:
             result += int(num)
         elif num < 0:
             raise ValueError(f'Negative numbers are not allowed: {num}')
+    
     return result
 
-
+# run the main program with some expected cases
 if __name__ == '__main__':
     print(add('1,2,3,4,5'))  # output: 15
     print(add("1\n2,3"))  # output: 6
